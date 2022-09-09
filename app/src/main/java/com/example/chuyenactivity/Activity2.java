@@ -17,8 +17,7 @@ public class Activity2 extends AppCompatActivity {
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent iLogin = new Intent(Activity2.this,MainActivity.class);
-                startActivity(iLogin);
+                finish();
             }
         });
     }
