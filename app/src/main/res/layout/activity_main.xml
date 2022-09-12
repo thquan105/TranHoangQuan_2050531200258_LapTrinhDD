@@ -63,5 +63,33 @@
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/avatar"
+            android:layout_marginTop="-100dp"
+            android:background="@drawable/boder_main"
+            android:orientation="vertical">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="10dp"
+                android:paddingTop="85dp">
+                <!--chèn layout thông tin cá nhân-->
+                <include layout="@layout/info_layout" />
+            </ScrollView>
+        </LinearLayout>
+        <!--Chèn layout avater-->
+        <include
+            android:id="@+id/avatar"
+            layout="@layout/avatar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
 </LinearLayout>
