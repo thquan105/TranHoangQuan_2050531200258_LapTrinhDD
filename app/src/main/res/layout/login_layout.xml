@@ -9,21 +9,20 @@
     tools:context=".Login_Activity"
     android:background="@color/white"
     android:orientation="vertical">
+    <!--Wave top-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:background="@drawable/ic_wave">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="LOGIN"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_logo"/>
 
     </RelativeLayout>
+    <!--Main-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -121,6 +120,7 @@
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
+    <!--Wave bottom-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
