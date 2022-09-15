@@ -78,10 +78,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="User Name"
+                    android:hint="   User Name"
                     android:inputType="textPersonName"
                     android:paddingVertical="10dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:background="@drawable/tron"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -96,10 +97,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="PassWord"
+                    android:hint="  PassWord"
                     android:inputType="textPassword"
                     android:paddingVertical="10dp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:background="@drawable/tron"/>
 
                 <TextView
                     android:layout_width="match_parent"
