@@ -74,7 +74,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/txtusername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -93,7 +93,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/txtpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -112,6 +112,7 @@
                     android:textSize="14sp" />
 
                 <Button
+                    android:id="@+id/btnLogin"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -136,12 +137,15 @@
             android:layout_height="wrap_content"
             android:text="Don't have an account?"
             android:textColor="@color/black"
+            android:textSize="16sp"
             android:layout_gravity="bottom"/>
         <TextView
+            android:id="@+id/txtSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="5dp"
             android:text="Sign Up"
+            android:textSize="20sp"
             android:textColor="#0040FF"
             android:textStyle="bold"
             android:layout_gravity="bottom"/>

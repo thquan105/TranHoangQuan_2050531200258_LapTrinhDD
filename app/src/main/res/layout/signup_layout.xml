@@ -159,12 +159,14 @@
             android:layout_height="wrap_content"
             android:text="Already have an account?"
             android:textColor="@color/black"
+            android:textSize="16sp"
             android:layout_gravity="bottom"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="5dp"
             android:text="Log In"
+            android:textSize="20sp"
             android:textColor="#0040FF"
             android:textStyle="bold"
             android:layout_gravity="bottom"/>
