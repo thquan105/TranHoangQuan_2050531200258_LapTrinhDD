@@ -1,13 +1,3 @@
 <resources>
-    <
-    <
-    <
-    <
-    <
-    <
-    < HEAD
     <string name="app_name">UI_SignInSignUp</string>
-    =======
-    <string name="app_name">UI_Profile</string>
-    >>>>>>> 6c066621d707f810beabf4883dd71f4618df4e0c
 </resources>
