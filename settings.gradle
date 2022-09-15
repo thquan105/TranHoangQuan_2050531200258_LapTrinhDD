@@ -12,5 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+<<<<<<< HEAD
 rootProject.name = "UI_SignInSignUp"
+=======
+rootProject.name = "UI_Profile"
+>>>>>>> 6c066621d707f810beabf4883dd71f4618df4e0c
 include ':app'
