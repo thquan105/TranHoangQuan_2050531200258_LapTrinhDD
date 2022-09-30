@@ -1,18 +1,18 @@
 package com.example.kt_listview;
 
-public class nhom {
+import android.content.Intent;
+
+public class Nhom {
     private String Ten;
     private String Mota;
-    private String Anh;
+    private int Anh;
 
-    public nhom(String ten, String mota, String anh) {
+    public Nhom(String ten, String mota, int anh) {
         Ten = ten;
         Mota = mota;
         Anh = anh;
     }
 
-    public nhom() {
-    }
 
     public String getTen() {
         return Ten;
@@ -30,11 +30,11 @@ public class nhom {
         Mota = mota;
     }
 
-    public String getAnh() {
+    public int getAnh() {
         return Anh;
     }
 
-    public void setAnh(String anh) {
+    public void setAnh(int anh) {
         Anh = anh;
     }
 }
