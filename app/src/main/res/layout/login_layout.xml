@@ -10,18 +10,36 @@
     android:background="@color/white"
     android:orientation="vertical">
     <!--Wave top-->
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/ic_wave"
         android:gravity="center_horizontal"
-        android:background="@drawable/ic_wave">
-        <ImageView
+        android:paddingHorizontal="70dp"
+        android:weightSum="2">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ic_logo"/>
+            android:layout_weight="1"
+            android:fontFamily="@font/sofia_regular"
+            android:gravity="center"
+            android:text="Log"
+            android:textColor="@color/black"
+            android:textSize="80sp"
+            android:textStyle="bold" />
 
-    </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/sofia_regular"
+            android:gravity="center"
+            android:text="In"
+            android:textColor="@color/white"
+            android:textSize="80sp"
+            android:textStyle="bold" />
+    </LinearLayout>
     <!--Main-->
     <RelativeLayout
         android:layout_width="match_parent"
@@ -48,16 +66,18 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="15dp"
                     android:text="Welcome"
+                    android:fontFamily="@font/ubuntu_medium"
                     android:textColor="#000000"
-                    android:textSize="30sp"
+                    android:textSize="35sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_light"
                     android:text="Back"
                     android:textColor="#303030"
-                    android:textSize="40sp" />
+                    android:textSize="55sp" />
 
                 <View
                     android:layout_width="match_parent"
@@ -69,6 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingVertical="10dp"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:text="Email or Username"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -77,19 +98,23 @@
                     android:id="@+id/txtusername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/tron"
                     android:ems="10"
                     android:hint="User Name"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:drawablePadding="10dp"
                     android:inputType="textPersonName"
+                    android:minHeight="48dp"
                     android:paddingVertical="10dp"
-                    android:textColor="@color/black"
                     android:paddingStart="15dp"
-                    android:background="@drawable/tron"/>
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingVertical="10dp"
                     android:text="Password"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -97,31 +122,38 @@
                     android:id="@+id/txtpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/tron"
                     android:ems="10"
                     android:hint="PassWord"
+                    android:drawableLeft="@drawable/ic_pass"
+                    android:drawablePadding="10dp"
                     android:inputType="textPassword"
-                    android:paddingStart="15dp"
+                    android:minHeight="48dp"
                     android:paddingVertical="10dp"
-                    android:textColor="@color/black"
-                    android:background="@drawable/tron"/>
+                    android:paddingStart="15dp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:paddingVertical="10dp"
+                    android:fontFamily="@font/ubuntu_regular"
                     android:text="Forgot Password?"
                     android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/btnLogin"
-                    android:layout_width="150dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:backgroundTint="#6AFFF3"
                     android:background="@drawable/tron"
-                    android:text="Log In"
-                    android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:text="Login"
+                    android:layout_marginHorizontal="70dp"
+                    android:textAllCaps="false"
+                    android:textSize="25sp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -133,11 +165,13 @@
         android:background="@drawable/ic_wave__1_"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:paddingBottom="10dp">
+        android:layout_marginTop="-60dp"
+        android:paddingBottom="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an account?"
+            android:fontFamily="@font/ubuntu_regular"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_gravity="bottom"/>
@@ -145,11 +179,12 @@
             android:id="@+id/txtSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_medium"
             android:paddingStart="5dp"
-            android:text="Sign Up"
+            android:text="Sign up"
             android:textSize="20sp"
-            android:textColor="#0040FF"
-            android:textStyle="bold"
+            android:textColor="#D5005ECF"
+            android:textStyle="italic"
             android:layout_gravity="bottom"/>
     </LinearLayout>
   </LinearLayout>
