@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,24 +46,6 @@ public class Login_Activity extends AppCompatActivity {
                 openSignUp();
             }
         });
-    }
-    Boolean doubleTap = false;
-    @Override
-    public void onBackPressed() {
-        if (doubleTap) {
-            super.onBackPressed();
-            return;
-        } else {
-            Toast.makeText(Login_Activity.this, "Press Back again to exit the application!", Toast.LENGTH_SHORT).show();
-            doubleTap = true;
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    doubleTap = false;
-                }
-            }, 1800);
-        }
     }
 
     public void openMenu(){

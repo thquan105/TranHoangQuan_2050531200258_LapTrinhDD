@@ -159,15 +159,11 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="360dp"
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="98dp"
+        android:layout_height="98dp"
         android:layout_centerHorizontal="true"
-        app:cardElevation="10dp">
-        <ImageView
-            android:layout_width="98dp"
-            android:layout_height="98dp"
-            android:src="@drawable/avatar"/>
-    </androidx.cardview.widget.CardView>
+        android:elevation="10dp"
+        android:src="@drawable/avatar" />
 </RelativeLayout>

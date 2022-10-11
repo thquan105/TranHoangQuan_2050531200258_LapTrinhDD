@@ -1,21 +1,17 @@
 package com.example.ui_signinsignup;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Menu_Activity extends AppCompatActivity {
     private TextView btnProfile;
     private TextView btnList;
-    private Button btnOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,57 +29,37 @@ public class Menu_Activity extends AppCompatActivity {
         btnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openProfile();
+                openList();
             }
         });
 
-        btnOut = (Button) findViewById(R.id.btnLogout);
-        btnOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                exit();
-            }
-        });
     }
+
+    Boolean doubleTap = false;
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
-        exit();
+        if (doubleTap) {
+            finish();
+        } else {
+            Toast.makeText(Menu_Activity.this, "Press Back again to exit the application!", Toast.LENGTH_SHORT).show();
+            doubleTap = true;
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    doubleTap = false;
+                }
+            }, 1800);
+        }
     }
     public void openProfile(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-    }
-    public void openList(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-    public void openLogout(){
-        Intent intent = new Intent(this, Login_Activity.class);
-        startActivity(intent);
         finish();
     }
-
-    public void exit(){
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        // Setting Alert Dialog Title
-        alertDialogBuilder.setTitle("Confirm..!!!");
-        // Icon Of Alert Dialog
-        alertDialogBuilder.setIcon(R.drawable.ic_confirm);
-        // Setting Alert Dialog Message
-        alertDialogBuilder.setMessage("Are you sure, You want to Logout ?");
-        alertDialogBuilder.setCancelable(false);
-        alertDialogBuilder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface arg0, int arg1) {
-                Toast.makeText(Menu_Activity.this, "Successful Logout", Toast.LENGTH_SHORT).show();
-                openLogout();
-            }
-        });
-
-        alertDialogBuilder.setPositiveButton("Cancel", null);
-
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
+    public void openList(){
+        Intent intent = new Intent(this, Page_Activity.class);
+        startActivity(intent);
     }
+
 }
