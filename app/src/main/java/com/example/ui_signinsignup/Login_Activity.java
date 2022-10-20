@@ -49,7 +49,7 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void openMenu(){
-        Intent intent = new Intent(this, Menu_Activity.class);
+        Intent intent = new Intent(this, Home_Activity.class);
         startActivity(intent);
     }
     public void openSignUp(){

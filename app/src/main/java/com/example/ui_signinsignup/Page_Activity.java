@@ -1,31 +1,52 @@
 package com.example.ui_signinsignup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.ui_signinsignup.page.Page;
+import com.example.ui_signinsignup.page.PageAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 public class Page_Activity extends AppCompatActivity {
+    BottomNavigationView bottomNavigationView;
     private RecyclerView recyclerView;
     private PageAdapter pageAdapter;
-    private ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
         initView();
 
-        back = (ImageView) findViewById(R.id.btnBack);
-        back.setOnClickListener(new View.OnClickListener() {
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.menu_page);
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                finish();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_home:
+                        startActivity(new Intent(getApplicationContext(), Home_Activity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.menu_page:
+                        return true;
+                    case R.id.menu_profile:
+                        startActivity(new Intent(getApplicationContext(), Profile_Activity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
             }
         });
     }

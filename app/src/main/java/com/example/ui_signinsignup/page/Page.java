@@ -1,4 +1,4 @@
-package com.example.ui_signinsignup;
+package com.example.ui_signinsignup.page;
 
 public class Page {
     private int srcImg;

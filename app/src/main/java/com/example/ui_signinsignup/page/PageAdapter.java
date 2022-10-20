@@ -1,4 +1,4 @@
-package com.example.ui_signinsignup;
+package com.example.ui_signinsignup.page;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ui_signinsignup.R;
 
 import java.util.ArrayList;
 
