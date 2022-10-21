@@ -1,6 +1,5 @@
 package com.example.ui_signinsignup.page;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,20 +17,40 @@ import com.example.ui_signinsignup.R;
 import java.util.ArrayList;
 
 public class PageAdapter extends RecyclerView.Adapter<PageAdapter.ViewHoder>{
+    private static int TYPE_PAGE_V = 1;
+    private static int TYPE_PAGE_H = 2;
     ArrayList<Page> dataPages;
-    Context context;
 
-    public PageAdapter(ArrayList<Page> dataPages, Context context) {
+    public void setData(ArrayList<Page> dataPages) {
         this.dataPages = dataPages;
-        this.context = context;
+        notifyDataSetChanged();
     }
+
+
+    @Override
+    public int getItemViewType(int position) {
+        Page page = dataPages.get(position);
+        if (page.isH()){
+            return TYPE_PAGE_V;
+        } else {
+            return TYPE_PAGE_H;
+        }
+    }
+//    V = Dọc, H = Ngang
+
 
     @NonNull
     @Override
     public ViewHoder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View itemView = layoutInflater.inflate(R.layout.item_row,parent,false);
-        return new ViewHoder(itemView);
+        if (TYPE_PAGE_V == viewType) {
+            View itemView = layoutInflater.inflate(R.layout.item_row, parent, false);
+            return new ViewHoder(itemView);
+        } else if (TYPE_PAGE_H == viewType){
+            View itemView = layoutInflater.inflate(R.layout.item_page, parent, false);
+            return new ViewHoder(itemView);
+        }
+        return null;
     }
 
     @Override

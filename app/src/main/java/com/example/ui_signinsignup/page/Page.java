@@ -5,19 +5,18 @@ public class Page {
     private String txt_Name;
     private String txt_Description;
     private String txt_About;
+    private boolean isH;
 
-    public Page(int srcImg, String txt_Name, String txt_Description) {
-        this.srcImg = srcImg;
-        this.txt_Name = txt_Name;
-        this.txt_Description = txt_Description;
-    }
 
-    public Page(int srcImg, String txt_Name, String txt_Description, String txt_About) {
+    public Page(int srcImg, String txt_Name, String txt_Description, String txt_About, Boolean isH) {
         this.srcImg = srcImg;
         this.txt_Name = txt_Name;
         this.txt_Description = txt_Description;
         this.txt_About = txt_About;
+        this.isH = isH;
     }
+
+
 
     public int getSrcImg() {
         return srcImg;
@@ -49,5 +48,13 @@ public class Page {
 
     public void setTxt_About(String txt_About) {
         this.txt_About = txt_About;
+    }
+
+    public boolean isH() {
+        return isH;
+    }
+
+    public void setH(boolean h) {
+        isH = h;
     }
 }
