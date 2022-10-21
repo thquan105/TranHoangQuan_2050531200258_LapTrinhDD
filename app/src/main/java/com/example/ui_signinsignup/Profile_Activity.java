@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -50,10 +51,12 @@ public class Profile_Activity extends AppCompatActivity {
                     case R.id.menu_home:
                         startActivity(new Intent(getApplicationContext(), Home_Activity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.menu_page:
                         startActivity(new Intent(getApplicationContext(), Page_Activity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.menu_profile:
                         return true;
@@ -88,6 +91,23 @@ public class Profile_Activity extends AppCompatActivity {
         Intent intent = new Intent(this, Login_Activity.class);
         startActivity(intent);
         finish();
+    }
+    Boolean doubleTap = false;
+    @Override
+    public void onBackPressed() {
+        if (doubleTap) {
+            finish();
+        } else {
+            Toast.makeText(Profile_Activity.this, "Press Back again to exit the application!", Toast.LENGTH_SHORT).show();
+            doubleTap = true;
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    doubleTap = false;
+                }
+            }, 1800);
+        }
     }
 //    public void openMenu(){
 //        Intent intent = new Intent(this, Home_Activity.class);

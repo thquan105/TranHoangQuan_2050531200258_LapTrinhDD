@@ -15,8 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/ic_wave">
+        android:layout_alignParentTop="true">
 
         <TextView
             android:layout_width="match_parent"
@@ -160,21 +159,12 @@
     </RelativeLayout>
     <!--Wave bottom-->
 
-    <LinearLayout
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_wave__1_"
-        android:orientation="horizontal"
-        android:layout_above="@+id/bottom_navigation"
-        android:gravity="center_horizontal">
-    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/color_btn"
+        android:background="#415d43"
         app:itemTextColor="@color/custom_color_navigation"
         app:itemIconTint="@color/custom_color_navigation"
         app:menu="@menu/menu_bottom_navigation"/>

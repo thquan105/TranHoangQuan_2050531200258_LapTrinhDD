@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login_Activity"
-    android:background="@color/white"
+    android:background="#f4f3ee"
     android:orientation="vertical">
     <!--Wave top-->
     <LinearLayout
@@ -15,10 +15,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ic_wave"
         android:gravity="center_horizontal">
-        <ImageView
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:src="@drawable/logo_u"/>
     </LinearLayout>
     <!--Main-->
     <RelativeLayout
@@ -37,7 +33,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/color_main"
+                android:background="#7AAE7C"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:paddingHorizontal="30dp">
@@ -48,7 +44,7 @@
                     android:fontFamily="@font/ubuntu_medium"
                     android:paddingTop="15dp"
                     android:text="Welcome"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="35sp"
                     android:textStyle="bold" />
 
@@ -57,14 +53,14 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/ubuntu_light"
                     android:text="Back"
-                    android:textColor="#303030"
+                    android:textColor="#FFFFFF"
                     android:textSize="55sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginBottom="15dp"
-                    android:background="#FFFFFF" />
+                    android:background="#505050" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -72,7 +68,7 @@
                     android:fontFamily="@font/ubuntu_regular"
                     android:paddingVertical="10dp"
                     android:text="Email or Username"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <EditText
@@ -96,7 +92,7 @@
                     android:fontFamily="@font/ubuntu_regular"
                     android:paddingVertical="10dp"
                     android:text="Password"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="18sp" />
 
                 <EditText
@@ -121,6 +117,7 @@
                     android:gravity="end"
                     android:paddingVertical="10dp"
                     android:text="Forgot Password?"
+                    android:textColor="#D3CFCF"
                     android:textSize="14sp" />
 
                 <Button
@@ -129,11 +126,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="70dp"
-                    android:background="@drawable/tron"
-                    android:backgroundTint="#6AFFF3"
+                    android:background="@drawable/edt_button"
                     android:fontFamily="@font/ubuntu_regular"
                     android:text="Login"
                     android:textAllCaps="false"
+                    android:textColor="@color/white"
                     android:textSize="25sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -146,25 +143,25 @@
         android:background="@drawable/ic_wave__1_"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-35dp"
         android:paddingBottom="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an account?"
             android:fontFamily="@font/ubuntu_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_gravity="bottom"/>
         <TextView
             android:id="@+id/txtSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/ubuntu_medium"
+            android:fontFamily="@font/ubuntu_regular"
             android:paddingStart="5dp"
             android:text="Sign up"
             android:textSize="20sp"
-            android:textColor="#D5005ECF"
+            android:textColor="#FFEB3B"
             android:textStyle="italic"
             android:layout_gravity="bottom"/>
     </LinearLayout>

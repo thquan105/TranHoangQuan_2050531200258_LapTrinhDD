@@ -44,8 +44,18 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openSignUp();
+                finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, Start_Activity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_left, R.anim.slide_out_to_right);
+        finish();
+        //super.onBackPressed();
     }
 
     public void openMenu(){
@@ -55,5 +65,6 @@ public class Login_Activity extends AppCompatActivity {
     public void openSignUp(){
         Intent intent = new Intent(this, Signup_Activity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);
     }
 }

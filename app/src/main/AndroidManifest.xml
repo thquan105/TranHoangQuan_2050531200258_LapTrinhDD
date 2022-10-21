@@ -13,7 +13,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity
-            android:name=".HomeActivity"
+            android:name=".Start_Activity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Detail_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile_Activity"
             android:exported="false" />
         <activity
             android:name=".Page_Activity"
@@ -26,16 +38,9 @@
             android:exported="false" />
         <activity
             android:name=".Login_Activity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity
-            android:name=".Profile_Activity"
-            android:exported="false" />
     </application>
 
 </manifest>

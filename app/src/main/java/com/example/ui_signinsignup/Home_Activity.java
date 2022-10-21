@@ -50,11 +50,13 @@ public class Home_Activity extends AppCompatActivity {
                         return true;
                     case R.id.menu_page:
                         startActivity(new Intent(getApplicationContext(), Page_Activity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(0,0);
+                        finish();
                         return true;
                     case R.id.menu_profile:
                         startActivity(new Intent(getApplicationContext(), Profile_Activity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                 }
                 return false;

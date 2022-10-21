@@ -10,26 +10,29 @@
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="250dp">
+
         <androidx.cardview.widget.CardView
-            app:cardCornerRadius="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
             android:layout_marginTop="40dp"
+            app:cardCornerRadius="15dp"
             app:cardElevation="10dp"
             app:cardUseCompatPadding="true"
-            card_view:cardCornerRAdius="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="240dp">
+            card_view:cardCornerRAdius="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="25dp"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_gravity="center"
-                    android:layout_marginTop="15dp">
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -38,13 +41,15 @@
                         android:textColor="@color/black"
                         android:textSize="25sp"
                         android:textStyle="bold" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/ic_stars"
                         android:layout_gravity="center"
-                        android:layout_marginStart="5dp"/>
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/ic_stars" />
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -54,7 +59,7 @@
                     android:text="MSV: 2050531200258"
                     android:textColor="#5C5A5A"
                     android:textSize="13sp"
-                    android:textStyle="normal"/>
+                    android:textStyle="normal" />
 
                 <View
                     android:layout_width="match_parent"
