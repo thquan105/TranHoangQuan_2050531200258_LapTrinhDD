@@ -52,7 +52,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return listCate.size();
