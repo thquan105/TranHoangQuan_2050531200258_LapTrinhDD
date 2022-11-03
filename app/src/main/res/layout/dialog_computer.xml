@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:layout_margin="30dp"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/isIDCo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID Computer"
+        android:layout_marginBottom="10dp"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/isNameCo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name Computer"
+        android:layout_marginBottom="10dp"
+        tools:ignore="MissingConstraints"/>
+    <EditText
+        android:id="@+id/isMota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:layout_marginBottom="10dp"
+        tools:ignore="MissingConstraints"/>
+    <EditText
+        android:id="@+id/isIDCate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID Category"
+        android:layout_marginBottom="10dp"
+        tools:ignore="MissingConstraints"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btn_okCo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="OK" />
+
+        <Button
+            android:id="@+id/btn_cancelCo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CANCEL" />
+
+    </LinearLayout>
+
+</LinearLayout>
