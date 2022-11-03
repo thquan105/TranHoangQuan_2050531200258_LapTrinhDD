@@ -5,12 +5,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ public class ComputerActivity extends AppCompatActivity {
     public static RecyclerView recyclerView;
     public static String maCa;
     public static ComputerAdapter computerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -80,6 +83,17 @@ public class ComputerActivity extends AppCompatActivity {
                 getDataComputer();
             }
         });
+
+        //Back
+        ImageView ic_back = (ImageView) findViewById(R.id.btnBack);
+        ic_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
     }
 
         public void getDataComputer() {
