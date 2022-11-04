@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.sqlitedemo.Adapter.SinhVienAdapter;
@@ -37,6 +38,14 @@ public class DsSvActivity extends AppCompatActivity {
         dbHelper_258 = new DBHelper(this, "qlsinhvien", null, 1);
         //cuộn mượt hơn
         recyclerView_258.setHasFixedSize(true);
+        //Back
+        ImageView ic_back_258 = (ImageView) findViewById(R.id.btnBack_258);
+        ic_back_258.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         getDataComputer();
         Button button = (Button) findViewById(R.id.btn_themSV_258);
         button.setOnClickListener(new View.OnClickListener() {
