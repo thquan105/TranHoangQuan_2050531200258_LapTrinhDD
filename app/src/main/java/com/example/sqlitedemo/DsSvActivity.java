@@ -90,7 +90,7 @@ public class DsSvActivity extends AppCompatActivity {
             String ma = dataSV_258.getString(0);
             String ten = dataSV_258.getString(1);
             String khoa = dataSV_258.getString(2);
-            arrayList_258.add(new SinhVien("MSV: "+ma, ten, "Khoá: "+ khoa, maLop_258.trim()));
+            arrayList_258.add(new SinhVien(ma, ten, khoa, maLop_258.trim()));
             dataSV_258.moveToNext();
         }
         dataSV_258.close();
