@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
             dbHelper_258.QueryData("INSERT INTO tbllop (malop, tenlop, siso) VALUES ('20T1','CNTT1',65)");
             dbHelper_258.QueryData("INSERT INTO tbllop (malop, tenlop, siso) VALUES ('20T2','CNTT2',74)");
             dbHelper_258.QueryData("INSERT INTO tbllop (malop, tenlop, siso) VALUES ('20T3', 'CNTT3',67)");
+            dbHelper_258.QueryData("INSERT INTO tbllop (malop, tenlop, siso) VALUES ('21T1', 'CNTT3',70)");
+            dbHelper_258.QueryData("INSERT INTO tbllop (malop, tenlop, siso) VALUES ('21T2', 'CNTT3',72)");
+            dbHelper_258.QueryData("INSERT INTO tbllop (malop, tenlop, siso) VALUES ('21T3', 'CNTT3',48)");
         }
         cursor_258 = dbHelper_258.GetData("SELECT * FROM tblsinhvien");
         if (cursor_258.getCount() == 0) {
@@ -48,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
             dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200261', 'H Quan 4', '2020-2024', '20T1')");
             dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200262', 'H Quan 5', '2020-2024', '20T3')");
             dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200263', 'H Quan 6', '2020-2024', '20T2')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200258', 'H Quan 7', '2020-2024', '21T2')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200259', 'H Quan 8', '2020-2024', '21T1')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200260', 'H Quan 9', '2020-2024', '21T3')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200261', 'H Quan 10', '2020-2024', '21T1')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200262', 'H Quan 11', '2020-2024', '21T3')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200263', 'H Quan 12', '2020-2024', '21T2')");
         }
         getDataLop();
     }
