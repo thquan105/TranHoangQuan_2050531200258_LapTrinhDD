@@ -63,26 +63,35 @@ public class DsSvActivity extends AppCompatActivity {
                 EditText tv4 = (EditText) dialog.findViewById(R.id.isToan_258);
                 EditText tv5 = (EditText) dialog.findViewById(R.id.isTin_258);
                 EditText tv6 = (EditText) dialog.findViewById(R.id.isAnh_258);
-                EditText tv8 = (EditText) dialog.findViewById(R.id.isMaLop_258);
+                EditText tv7 = (EditText) dialog.findViewById(R.id.isMaLop_258);
 
-                tv8.setText(maLop_258.trim());
+                tv7.setText(maLop_258.trim());
                 Button btok = (Button) dialog.findViewById(R.id.btn_ok_258);
                 Button btcancel = (Button) dialog.findViewById(R.id.btn_cancel_258);
                 btok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) " +
-                                "VALUES ('"+tv1.getText().toString().trim()+"', " +
-                                "'"+tv2.getText().toString().trim()+"', " +
-                                "'"+tv3.getText().toString().trim()+"', " +
-                                "'"+tv4.getText().toString().trim()+"', " +
-                                "'"+tv5.getText().toString().trim()+"', " +
-                                "'"+tv6.getText().toString().trim()+"', " +
-                                "'"+tv8.getText().toString()+"')");
-                        getDataSV();
-                        dialog.dismiss();
+                        if (tv1 == null && tv2 == null && tv3 == null && tv4 == null && tv5 == null && tv6 == null && tv7 == null) {
+                            Toast.makeText(getApplicationContext(), "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                        } else {
+                            try {
+                                dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) " +
+                                        "VALUES ('" + tv1.getText().toString().trim() + "', " +
+                                        "'" + tv2.getText().toString().trim() + "', " +
+                                        "'" + tv3.getText().toString().trim() + "', " +
+                                        "'" + tv4.getText().toString().trim() + "', " +
+                                        "'" + tv5.getText().toString().trim() + "', " +
+                                        "'" + tv6.getText().toString().trim() + "', " +
+                                        "'" + tv7.getText().toString() + "')");
+                            } catch (Exception e) {
+                                Toast.makeText(getApplicationContext(), "Nhập sai dữ liệu", Toast.LENGTH_SHORT).show();
+                            }
+                            getDataSV();
+                            dialog.dismiss();
+                        }
                     }
                 });
+
                 btcancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

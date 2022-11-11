@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sqlitedemo.Adapter.SinhVienAdapter;
 import com.example.sqlitedemo.Model.SinhVien;
@@ -98,17 +99,21 @@ public class DetailActivity extends AppCompatActivity {
                 btok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        DsSvActivity.dbHelper_258.QueryData("UPDATE tblsinhvien SET " +
-                                "masv = '"+tv1.getText().toString().trim()+ "', " +
-                                "tensv='"+ tv2.getText().toString().trim()+ "', " +
-                                "ngaySinh='"+ tv3.getText().toString().trim()+"', " +
-                                "toan= "+ tv4.getText().toString().trim()+ ", " +
-                                "tin="+ tv5.getText().toString().trim()+ ", " +
-                                "anh= "+ tv6.getText().toString().trim()+ ", " +
-                                "malop= '"+ tv7.getText().toString().trim() + "' " +
-                                "WHERE masv ='"+sinhVien_258.getMaSV_258().trim()+"'");
-                        getDataSinhVien();
-                        dialog.dismiss();
+                        if (tv1 == null && tv2 == null && tv3 == null && tv4 == null && tv5 == null && tv6 == null && tv7 == null) {
+                            Toast.makeText(getApplicationContext(), "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                        } else {
+                            DsSvActivity.dbHelper_258.QueryData("UPDATE tblsinhvien SET " +
+                                    "masv = '" + tv1.getText().toString().trim() + "', " +
+                                    "tensv='" + tv2.getText().toString().trim() + "', " +
+                                    "ngaySinh='" + tv3.getText().toString().trim() + "', " +
+                                    "toan= " + tv4.getText().toString().trim() + ", " +
+                                    "tin=" + tv5.getText().toString().trim() + ", " +
+                                    "anh= " + tv6.getText().toString().trim() + ", " +
+                                    "malop= '" + tv7.getText().toString().trim() + "' " +
+                                    "WHERE masv ='" + sinhVien_258.getMaSV_258().trim() + "'");
+                            getDataSinhVien();
+                            dialog.dismiss();
+                        }
                     }
                 });
                 btcancel.setOnClickListener(new View.OnClickListener() {
