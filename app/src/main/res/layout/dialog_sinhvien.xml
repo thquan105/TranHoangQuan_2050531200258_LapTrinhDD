@@ -1,98 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#FFF7FB"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center_horizontal"
-    android:layout_margin="30dp"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nhập Thông Tin\nSinh Viên"
-        android:gravity="center"
-        android:textColor="#FF0000"
-        android:textSize="30dp"
-        android:layout_marginBottom="30dp"/>
-    <EditText
-        android:id="@+id/isMaSV_258"
-        android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mã Sinh viên"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints"/>
-
-    <EditText
-        android:id="@+id/isName_258"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="Tên Sinh viên"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints"/>
-    <EditText
-        android:id="@+id/isNamSinh_258"
-        android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Năm Sinh"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints"/>
-    <EditText
-        android:id="@+id/isToan_258"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:hint="Điểm Toán"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints"/>
-    <EditText
-        android:id="@+id/isTin_258"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:hint="Điểm Tin"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints"/>
-    <EditText
-        android:id="@+id/isAnh_258"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:hint="Điểm Anh"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints"/>
-    <EditText
-        android:id="@+id/isMaLop_258"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mã Lớp"
-        android:layout_marginBottom="10dp"
-        tools:ignore="MissingConstraints"/>
-
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <Button
-            android:id="@+id/btn_ok_258"
+        android:gravity="center_horizontal"
+        android:layout_margin="30dp"
+        android:orientation="vertical">
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="OK" />
-
-        <Button
-            android:id="@+id/btn_cancel_258"
+            android:text="Nhập Thông Tin\nSinh Viên"
+            android:gravity="center"
+            android:textColor="#FF0000"
+            android:textSize="30dp"
+            android:layout_marginBottom="30dp"/>
+        <EditText
+            android:id="@+id/isMaSV_258"
+            android:inputType="text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="CANCEL" />
+            android:hint="Mã Sinh viên"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"/>
 
+        <EditText
+            android:id="@+id/isName_258"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Tên Sinh viên"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"/>
+        <EditText
+            android:id="@+id/isNamSinh_258"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Năm Sinh"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"/>
+        <EditText
+            android:id="@+id/isToan_258"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Điểm Toán"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"/>
+        <EditText
+            android:id="@+id/isTin_258"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Điểm Tin"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"/>
+        <EditText
+            android:id="@+id/isAnh_258"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="Điểm Anh"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"/>
+        <EditText
+            android:id="@+id/isMaLop_258"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mã Lớp"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btn_ok_258"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="7dp"
+                android:background="#97D1FF"
+                android:text="OK" />
+
+            <Button
+                android:id="@+id/btn_cancel_258"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="7dp"
+                android:background="#FF9797"
+                android:layout_weight="1"
+                android:text="CANCEL" />
+        </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>
