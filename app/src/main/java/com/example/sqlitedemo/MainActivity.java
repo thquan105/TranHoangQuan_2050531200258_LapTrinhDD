@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView_258;
     DBHelper dbHelper_258;
     ArrayList<Lop> arrayList_258 = new ArrayList<>();
-    LopAdapter lopAdapter_258;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +28,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView_258.setHasFixedSize(true);
 
         //tạo table
-        dbHelper_258.QueryData("CREATE TABLE IF NOT EXISTS tbllop ( malop TEXT PRIMARY KEY, tenlop TEXT, siso INTEGER)");
-
-        dbHelper_258.QueryData("CREATE TABLE IF NOT EXISTS tblsinhvien ( masv TEXT PRIMARY KEY, tensv TEXT, khoa TEXT, malop TEXT NOT NULL CONSTRAINT malop REFERENCES tbllop(malop) ON DELETE CASCADE)");
+        dbHelper_258.QueryData("CREATE TABLE IF NOT EXISTS tbllop ( " +
+                "malop TEXT PRIMARY KEY, " +
+                "tenlop TEXT, " +
+                "siso INTEGER)");
+        //MSV, TenSV, Năm sinh, Lớp, Toán, Tin, Anh, Mã Lớp
+        dbHelper_258.QueryData("CREATE TABLE IF NOT EXISTS tblsinhvien ( " +
+                "masv TEXT PRIMARY KEY, " +
+                "tensv TEXT, " +
+                "ngaySinh TEXT, " +
+                "toan DOUBLE, " +
+                "tin DOUBLE, " +
+                "anh DOUBLE, " +
+                "malop TEXT NOT NULL CONSTRAINT malop REFERENCES tbllop(malop) ON DELETE CASCADE)");
 
         //Nhập dữ liệu
         Cursor cursor_258 = dbHelper_258.GetData("SELECT * FROM tbllop");
@@ -45,18 +54,18 @@ public class MainActivity extends AppCompatActivity {
         }
         cursor_258 = dbHelper_258.GetData("SELECT * FROM tblsinhvien");
         if (cursor_258.getCount() == 0) {
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200258', 'H Quan 1', '2020-2024', '20T2')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200259', 'H Quan 2', '2020-2024', '20T1')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200260', 'H Quan 3', '2020-2024', '20T3')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200261', 'H Quan 4', '2020-2024', '20T1')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200262', 'H Quan 5', '2020-2024', '20T3')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2050531200263', 'H Quan 6', '2020-2024', '20T2')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200258', 'H Quan 7', '2020-2024', '21T2')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200259', 'H Quan 8', '2020-2024', '21T1')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200260', 'H Quan 9', '2020-2024', '21T3')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200261', 'H Quan 10', '2020-2024', '21T1')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200262', 'H Quan 11', '2020-2024', '21T3')");
-            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, khoa, malop) VALUES ('2150531200263', 'H Quan 12', '2020-2024', '21T2')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2050531200258', 'H Quan 1', '2002',8 , 9, 8, '20T2')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2050531200259', 'H Quan 2', '2002',8 , 7, 8, '20T1')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2050531200260', 'H Quan 3', '2002',8 , 8, 9, '20T3')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2050531200261', 'H Quan 4', '2002',8 , 8, 7, '20T1')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2050531200262', 'H Quan 5', '2002',8 , 9, 6, '20T3')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2050531200263', 'H Quan 6', '2002',9 , 8, 8, '20T2')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2150531200258', 'H Quan 7', '2003',8 , 7, 8, '21T2')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2150531200259', 'H Quan 8', '2003',7 , 8, 9, '21T1')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2150531200260', 'H Quan 9', '2003',8 , 8, 7, '21T3')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2150531200261', 'H Quan 10', '2003',8 , 9, 8, '21T1')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2150531200262', 'H Quan 11', '2003',8 , 8, 7, '21T3')");
+            dbHelper_258.QueryData("INSERT INTO tblsinhvien (masv, tensv, ngaySinh, toan, tin, anh, malop) VALUES ('2150531200263', 'H Quan 12', '2003',7 , 9, 7, '21T2')");
         }
         getDataLop();
     }

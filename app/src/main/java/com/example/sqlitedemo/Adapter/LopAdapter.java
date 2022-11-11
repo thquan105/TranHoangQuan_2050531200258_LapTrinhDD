@@ -40,6 +40,7 @@ public class LopAdapter extends RecyclerView.Adapter<LopAdapter.ViewHolder>{
         if (lop_258 == null){
             return;
         }
+        holder.ma_258.setText(lop_258.getMalop_258());
         holder.name_258.setText(lop_258.getTenlop_258());
         holder.siso_258.setText(String.valueOf(lop_258.getSiso_258()));
         holder.main_card_258.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +48,7 @@ public class LopAdapter extends RecyclerView.Adapter<LopAdapter.ViewHolder>{
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), DsSvActivity.class);
                 intent.putExtra("Ma", lop_258.getMalop_258());
+                intent.putExtra("Ten", lop_258.getTenlop_258());
                 view.getContext().startActivity(intent);
             }
         });
@@ -59,10 +61,11 @@ public class LopAdapter extends RecyclerView.Adapter<LopAdapter.ViewHolder>{
 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView name_258, siso_258;
+        TextView ma_258, name_258, siso_258;
         CardView main_card_258;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            ma_258 = itemView.findViewById(R.id.maLop_258);
             name_258 = itemView.findViewById(R.id.tenLop_258);
             siso_258 = itemView.findViewById(R.id.siso_258);
             main_card_258 = (CardView) itemView.findViewById(R.id.main_card);

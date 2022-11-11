@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +16,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sqlitedemo.DetailActivity;
 import com.example.sqlitedemo.DsSvActivity;
 import com.example.sqlitedemo.Model.SinhVien;
 import com.example.sqlitedemo.R;
@@ -51,7 +54,15 @@ public class SinhVienAdapter extends RecyclerView.Adapter<SinhVienAdapter.ViewHo
         }
         holder.masv_258.setText(sv_258.getMaSV_258());
         holder.tensv_258.setText(sv_258.getTenSV_258());
-        holder.khoa_258.setText(sv_258.getKhoa_258());
+        holder.namSinh_258.setText(sv_258.getNamSinh_258());
+        holder.cardView_258.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                intent.putExtra("SINHVIEN", sv_258);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -60,18 +71,18 @@ public class SinhVienAdapter extends RecyclerView.Adapter<SinhVienAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView masv_258, tensv_258, khoa_258;
-        public Button btnDel_258,btnEdit_258;
+        //MSV, TenSV, Năm sinh, Lớp, Toán, Tin, Anh, Mã Lớp
+        TextView masv_258, tensv_258, namSinh_258;
+        CardView cardView_258;
+        public Button btnDel_258;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             masv_258 = itemView.findViewById(R.id.maSV_258);
             tensv_258 = itemView.findViewById(R.id.tenSV_258);
-            khoa_258  = itemView.findViewById(R.id.khoa_258);
+            namSinh_258  = itemView.findViewById(R.id.namsinh_258);
             btnDel_258 = itemView.findViewById(R.id.btnDel);
-            btnEdit_258 = itemView.findViewById(R.id.btnEdit);
+            cardView_258 = itemView.findViewById(R.id.card_sv_258);
 
-
-            //Xử lý khi nút Chi tiết được bấm
             btnDel_258.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -85,12 +96,16 @@ public class SinhVienAdapter extends RecyclerView.Adapter<SinhVienAdapter.ViewHo
                             DsSvActivity.arrayList_258 = new ArrayList<>();
                             Cursor cursor = DsSvActivity.dbHelper_258.GetData("Select * from tblsinhvien where malop = '"+DsSvActivity.maLop_258.trim() +"'");
                             while (cursor.moveToNext()){
+                                //(masv, tensv, ngaySinh, toan, tin, anh, malop)
                                 @SuppressLint("Range") String maSV_258 =cursor.getString(cursor.getColumnIndex("masv"));
                                 @SuppressLint("Range") String tenSV_258 = cursor.getString(cursor.getColumnIndex("tensv"));
-                                @SuppressLint("Range") String khoaSV_258 = cursor.getString(cursor.getColumnIndex("khoa"));
+                                @SuppressLint("Range") String namSinh_258 = cursor.getString(cursor.getColumnIndex("ngaySinh"));
+                                @SuppressLint("Range") Double toan_258 = cursor.getDouble(cursor.getColumnIndex("toan"));
+                                @SuppressLint("Range") Double tin_258 = cursor.getDouble(cursor.getColumnIndex("tin"));
+                                @SuppressLint("Range") Double anh_258 = cursor.getDouble(cursor.getColumnIndex("anh"));
                                 @SuppressLint("Range") String maLop_258 = cursor.getString(cursor.getColumnIndex("malop"));
 
-                                DsSvActivity.arrayList_258.add(new SinhVien(maSV_258,tenSV_258,khoaSV_258,maLop_258));
+                                DsSvActivity.arrayList_258.add(new SinhVien(maSV_258, tenSV_258, namSinh_258, toan_258, tin_258, anh_258, maLop_258));
                             }
                             DsSvActivity.sinhVienAdapter_258 = new SinhVienAdapter(DsSvActivity.arrayList_258, view.getContext());
                             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL,false);
@@ -107,56 +122,6 @@ public class SinhVienAdapter extends RecyclerView.Adapter<SinhVienAdapter.ViewHo
                     alertDiaLog.show();
                 }
             });
-            //Khi click vào sửa
-            btnEdit_258.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Dialog dialog = new Dialog(view.getContext());
-                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialog.setContentView(R.layout.dialog_sinhvien);
-                    dialog.show();
-                    EditText tv1 = (EditText) dialog.findViewById(R.id.isMaSV_258);
-                    EditText tv2 = (EditText) dialog.findViewById(R.id.isName_258);
-                    EditText tv3 = (EditText) dialog.findViewById(R.id.isKhoa_258);
-                    EditText tv4 = (EditText) dialog.findViewById(R.id.isMaLop_258);
-                    tv1.setText(masv_258.getText().toString().trim());
-                    tv2.setText(tensv_258.getText().toString().trim());
-                    tv3.setText(khoa_258.getText().toString().trim());
-                    tv4.setVisibility(View.GONE);
-                    Button btok = (Button) dialog.findViewById(R.id.btn_ok_258);
-                    Button btcancel = (Button) dialog.findViewById(R.id.btn_cancel_258);
-
-                    btok.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            DsSvActivity.dbHelper_258.QueryData("UPDATE tblsinhvien SET masv = '"+tv1.getText().toString().trim()+ "',tensv='"+ tv2.getText().toString().trim()+ "',khoa='"+ tv3.getText().toString().trim()+"' WHERE masv ='"+masv_258.getText().toString().trim()+"'");
-                            DsSvActivity.arrayList_258 = new ArrayList<SinhVien>();
-                            Cursor cursor = DsSvActivity.dbHelper_258.GetData("SELECT * FROM tblsinhvien WHERE malop = '"+DsSvActivity.maLop_258.trim() +"'");
-                            while (cursor.moveToNext()){
-                                @SuppressLint("Range") String maSV_258 =cursor.getString(cursor.getColumnIndex("masv"));
-                                @SuppressLint("Range") String tenSV_258 = cursor.getString(cursor.getColumnIndex("tensv"));
-                                @SuppressLint("Range") String khoaSV_258 = cursor.getString(cursor.getColumnIndex("khoa"));
-                                @SuppressLint("Range") String maLop_258 = cursor.getString(cursor.getColumnIndex("malop"));
-
-                                DsSvActivity.arrayList_258.add(new SinhVien(maSV_258,tenSV_258,khoaSV_258,maLop_258));
-                            }
-                            DsSvActivity.sinhVienAdapter_258 = new SinhVienAdapter(DsSvActivity.arrayList_258, view.getContext());
-                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL,false);
-                            DsSvActivity.recyclerView_258.setAdapter(DsSvActivity.sinhVienAdapter_258);
-                            DsSvActivity.recyclerView_258.setLayoutManager(linearLayoutManager);
-                            dialog.dismiss();
-
-                        }
-                    });
-                    btcancel.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            dialog.cancel();
-                        }
-                    });
-                }
-            });
-
         }
     }
 }

@@ -50,44 +50,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
-                android:text="Khoa"
+                android:text="Năm Sinh:"
                 android:textColor="#101010"
                 android:textSize="15sp" />
             <TextView
-                android:id="@+id/khoa_258"
+                android:id="@+id/namsinh_258"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
-                android:text="Khoa"
+                android:text="2002"
                 android:textColor="#101010"
                 android:textSize="15sp" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            android:id="@+id/btnDel"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true">
-            <Button
-                android:id="@+id/btnEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:layout_margin="5dp"
-                android:backgroundTint="#5D94F3"
-                android:textSize="10sp"
-                android:text="Chỉnh sửa"                />
-            <Button
-                android:id="@+id/btnDel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:layout_margin="5dp"
-                android:backgroundTint="#FF4747"
-                android:textSize="10sp"
-                android:text="Xóa"/>
-        </LinearLayout>
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_del"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
