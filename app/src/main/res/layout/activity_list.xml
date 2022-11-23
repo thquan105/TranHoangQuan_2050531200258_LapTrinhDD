@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListActivity">
+
+    <RelativeLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/black"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tenDS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Danh sách"
+            android:paddingStart="20dp"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp"/>
+    </RelativeLayout>
+    <ListView
+        android:layout_below="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvThuoc"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="5dp"
+        android:layout_marginBottom="20dp">
+        <ImageView
+            android:id="@+id/btn_Logout"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@color/black"
+            android:padding="11dp"
+            android:src="@drawable/ic_logout"/>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
