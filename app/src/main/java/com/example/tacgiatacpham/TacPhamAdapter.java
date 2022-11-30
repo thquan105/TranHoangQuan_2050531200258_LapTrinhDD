@@ -1,6 +1,7 @@
 package com.example.tacgiatacpham;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -43,6 +45,18 @@ public class TacPhamAdapter extends RecyclerView.Adapter<TacPhamAdapter.myViewHo
         holder.nam.setText(tacPham.getNam());
         holder.img.setImageResource(tacPham.getHinhanh());
         holder.theloai.setText(tacPham.getTheloai());
+        holder.Ctacpham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), TacPhamActivity.class);
+                intent.putExtra("ten", tacPham.getTen());
+                intent.putExtra("theloai", tacPham.getTheloai());
+                intent.putExtra("nam", tacPham.getNam());
+                intent.putExtra("hinh", tacPham.getHinhanh());
+                intent.putExtra("mota", tacPham.getMota());
+                view.getContext().startActivity(intent);
+            }
+        });
 
     }
 
@@ -57,6 +71,7 @@ public class TacPhamAdapter extends RecyclerView.Adapter<TacPhamAdapter.myViewHo
     public class myViewHolder extends RecyclerView.ViewHolder{
         TextView ten, nam, theloai;
         CircleImageView img;
+        CardView Ctacpham;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -64,6 +79,7 @@ public class TacPhamAdapter extends RecyclerView.Adapter<TacPhamAdapter.myViewHo
             ten = itemView.findViewById(R.id.tv_ten);
             nam = itemView.findViewById(R.id.tv_nam);
             theloai = itemView.findViewById(R.id.tv_theloai);
+            Ctacpham = itemView.findViewById((R.id.card_tacpham));
         }
     }
 }
